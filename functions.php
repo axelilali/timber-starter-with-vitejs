@@ -19,8 +19,6 @@ if (file_exists($composer_autoload)) {
  require_once $composer_autoload;
  $timber = new Timber\Timber();
 }
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 require_once get_template_directory() . '/inc/vite.php';
 
