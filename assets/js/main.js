@@ -5,3 +5,5 @@ const app = createApp({})
 
 app.component('counter', Counter)
 app.mount('#app')
+
+console.log('Timber x Vite x Vue');

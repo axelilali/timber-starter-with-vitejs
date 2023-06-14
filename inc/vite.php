@@ -1,7 +1,7 @@
 <?php
 
 add_action('wp_enqueue_scripts', function () {
-  $manifestPath = get_theme_file_path('public/manifest.json');
+  $manifestPath = get_theme_file_path('dist/manifest.json');
 
   if (is_array(wp_remote_get('http://localhost:5173/'))) {
 
@@ -12,8 +12,8 @@ add_action('wp_enqueue_scripts', function () {
   } elseif (file_exists($manifestPath)) {
 
     $manifest = json_decode(file_get_contents($manifestPath), true);
-    wp_enqueue_script('main-js', get_theme_file_uri('public/' . $manifest['assets/js/main.js']['file']), ['jquery'], null, true);
-    wp_enqueue_style('style-css', get_theme_file_uri('public/' . $manifest['assets/sass/styles.scss']['file']), [], null);
+    wp_enqueue_script('main-js', get_theme_file_uri('dist/' . $manifest['assets/js/main.js']['file']), ['jquery'], null, true);
+    wp_enqueue_style('style-css', get_theme_file_uri('dist/' . $manifest['assets/sass/styles.scss']['file']), [], null);
   }
 });
 

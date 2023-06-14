@@ -7,10 +7,10 @@ export default defineConfig({
   },
   publicDir: 'public',
   build: {
-    assetsDir: '',
+    assetsDir: '.',
     emptyOutDir: true,
+    outDir: `dist`,
     manifest: true,
-    outDir: `public`,
     rollupOptions: {
       input: ['assets/js/main.js', 'assets/sass/styles.scss'],
     },
